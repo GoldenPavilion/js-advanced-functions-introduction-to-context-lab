@@ -10,10 +10,8 @@ function createEmployeeRecord(employeeArray){
     return employeeRecord;
 }
 
-function createEmployeeRecords(employees){
-    // return Array of Objects
-    // Convert each nested Array into an employee record using createEmployeeRecord
-    // Accumulate it to a new Array
+function createEmployeeRecords(employeesArray){
+    return employeesArray.map(createEmployeeRecord);
 }
 
 function createTimeInEvent(employee, dateStamp){
