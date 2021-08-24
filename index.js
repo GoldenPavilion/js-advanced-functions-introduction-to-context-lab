@@ -1,15 +1,19 @@
-function createEmployeeRecord(firstName, familyName, title, payRatePerHour){
-    // return Object "employee" {firstName, familyName, title, payRatePerHour, timeInEvents, timeOutEvents}
-    // Load Array elements into corresponding Object properties.
-    // Initialize empty Arrays on the properties timeInEvenst and timeOutEvents
-    // .map?
+function createEmployeeRecord(employeeArray){
+    let employeeRecord = {
+        firstName: employeeArray[0],
+        familyName: employeeArray[1], 
+        title: employeeArray[2],
+        payPerHour: employeeArray[3],
+        timeInEvents: [],
+        timeOutEvents: []
+    };
+    return employeeRecord;
 }
 
 function createEmployeeRecords(employees){
     // return Array of Objects
     // Convert each nested Array into an employee record using createEmployeeRecord
     // Accumulate it to a new Array
-    // .reduce?
 }
 
 function createTimeInEvent(employee, dateStamp){
