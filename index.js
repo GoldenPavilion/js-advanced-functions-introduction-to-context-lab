@@ -57,8 +57,7 @@ function allWagesFor(employee){
 }
 
 function findEmployeeByFirstName(srcArray, firstName){
-    // returns matching record or undefined
-    // test the firstName field for a match with the firstName argument
+    return srcArray.find(elememt => element.firstName === firstName);
 }
 
 function calculatePayroll(employee){
