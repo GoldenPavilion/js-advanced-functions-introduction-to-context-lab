@@ -49,10 +49,11 @@ function wagesEarnedOnDate(employee, dateStamp){
 }
 
 function allWagesFor(employee){
-    // returns pay owed for all dates
-    // using wagesEarnedOnDate, accumulate the value of all dates worked by the employee in the record used as context
-    // Aamount should be returned as a number
-    // You will need to find the available dates somehow...
+    let total = 0;
+    for (let i = 0; i < employee.timeInEvents.length; i++){
+        total += wagesEarnedOnDate(employee, employee.timeInEvents[i].date)
+    };
+    return total;
 }
 
 function findEmployeeByFirstName(srcArray, firstName){
