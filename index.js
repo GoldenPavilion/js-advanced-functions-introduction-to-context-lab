@@ -61,7 +61,6 @@ function findEmployeeByFirstName(srcArray, firstName){
 }
 
 function calculatePayroll(employee){
-    // returns sum of pay owed to all employees for all dates, as a number
-    // using wagedEarnedOnDate, accumulate the value of all dates worked by the employee in the record used as context
-    // Anount should be returned as a number
+    const allPay = (employee.map((e) => {return allWagesFor(e)}))
+    return allPay.reduce((accumulator, currentValue) => accumulator + currentValue)
 }
