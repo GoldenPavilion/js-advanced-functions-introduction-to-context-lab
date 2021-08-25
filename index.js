@@ -26,16 +26,20 @@ function createTimeInEvent(employee, dateStamp){
 }
 
 function createTimeOutEvent(employee, dateStamp){
-    // returns the employee record
-    // Add an Object with keys to the timeOutEvents Arrays on the record Object
-    // type - set to "TimeOut"
-    // hour - derived from the arg
-    // date - derived from the arg
+    let [date, hour] = dateStamp.split(" ");
+
+    employee.timeOutEvents.push({
+        type: "TimeOut",
+        hour: parseInt(hour),
+        date: date
+    });
+    return employee;
 }
 
 function hoursWorkedOnDate(employee, dateStamp){
-    // return hours worked, as an integer
-    // given a date, find the number of hours elapsed between the date's timeInEvents and timeOutEvent
+    const inTime = employee.timeInEvents.find(element => element.date === dateStamp).hour;
+    const outTime = employee.timeOutEvents.find(element => element.date === dateStamp).hour;
+    return (outTime - inTime)/100;
 }
 
 function wagesEarnedOnDate(employee, dateStamp){
