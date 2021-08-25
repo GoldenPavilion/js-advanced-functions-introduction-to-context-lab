@@ -15,11 +15,14 @@ function createEmployeeRecords(employeesArray){
 }
 
 function createTimeInEvent(employee, dateStamp){
-    // returns the employee record
-    // Add an Object with keys to the timeInEvents Arrays on the record Object
-    // type - set to "TimeIn"
-    // hour - derived from the arg
-    // date - derived from the arg
+    let [date, hour] = dateStamp.split(" ");
+    
+    employee.timeInEvents.push({
+        type: "TimeIn",
+        hour: parseInt(hour),
+        date: date
+    });
+    return employee;
 }
 
 function createTimeOutEvent(employee, dateStamp){
