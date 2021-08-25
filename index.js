@@ -43,9 +43,9 @@ function hoursWorkedOnDate(employee, dateStamp){
 }
 
 function wagesEarnedOnDate(employee, dateStamp){
-    // returns pay owed
-    // Using hoursWorkedOnDate, multiply the hours by the record's payRate to determine the amount owed.
-    // Amount should be returned as a number
+    const payRate = employee.payPerHour;
+    const hoursWorked = hoursWorkedOnDate(employee, dateStamp);
+    return payRate * hoursWorked;
 }
 
 function allWagesFor(employee){
