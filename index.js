@@ -60,7 +60,7 @@ function findEmployeeByFirstName(srcArray, firstName){
     return srcArray.find(function(record){ return record.firstName === firstName});
 }
 
-function calculatePayroll(employee){
-    const allPay = (employee.map((e) => {return allWagesFor(e)}))
+function calculatePayroll(srcArray){
+    const allPay = (srcArray.map((e) => {return allWagesFor(e)}))
     return allPay.reduce((accumulator, currentValue) => accumulator + currentValue)
 }
